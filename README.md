@@ -8,7 +8,7 @@
 </div>
 Official Pytorch Implementation for the research paper titled "ModelGPT: Unleashing LLM's Capabilities for Tailored Model Generation".
 
-## Installation
+## 安装 Installation
 Clone this repository and install the required packages:
 ```shell
 git clone https://github.com/IshiKura-a/ModelGPT.git
@@ -25,20 +25,23 @@ Download datasets:
 * GLUE Benchmark: already installed by pip requirements
 * Tabular Datasets: already installed by pip requirements
 
-## Baseline
+## 基线 Baseline
+对于基线，只需运行基线文件夹中的文件。例如，要运行nlp的基线，请运行：\
 For baseline, simply run the file in the folder `baseline`. For example, to run baseline for nlp, run:
 ```shell
 python -m baseline.glue
 ```
 
-## Train
+## 训练 Train
+要复制我们的结果，请分别对nlp、cv和表格数据集运行main_lora_nlp.py、main_img_cls.py、main_tabular.py，如下所示：\
 To replicate our results, run `main_lora_nlp.py`, `main_img_cls.py`, `main_tabular.py` for nlp, cv and tabular datasets individually, like:
 ```shell
 python main_lora_nlp.py
 ```
+超参数设置嵌入到这些文件中。读者还可以参考附录A。\
 Hyperparameter settings are embedded into these files. Readers can also refer to Appendix A.
 
-## Citation
+## 引用 Citation
 We warmly welcome any discussion in this emerging field! If you are interested in our work, you can star our project and cite our paper:
 ```bib
 @article{tang2024modelgpt,
