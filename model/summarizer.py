@@ -14,9 +14,7 @@ from abc import ABC, abstractmethod
 from typing import List, Dict
 
 import pandas as pd
-import torch
 from PIL.Image import Image
-from openai import InvalidRequestError
 from torch import Tensor
 from torchvision import transforms
 from torchvision.datasets import ImageFolder
@@ -24,20 +22,20 @@ from ucimlrepo import fetch_ucirepo
 
 from dataset.config import dataset_config, Datasets, get_transform
 
-
+#LLM核心模型
 class LLMBackbone(Enum):
     turbo = 'gpt-3.5-turbo'
     gpt4 = 'gpt-4'
     vision = 'gpt-4-vision-preview'
 
-
+#指导文件
 class Instruction(Enum):
-    parallel = f'./blob/inst_parallel.txt'
-    serial = f'./blob/inst.txt'
-    vision = f'./blob/inst_img_cls.txt'
-    tabular = f'./blob/inst_tabular.txt'
+    parallel = f'./blob/inst_parallel.txt' #平行
+    serial = f'./blob/inst.txt' #连续
+    vision = f'./blob/inst_img_cls.txt' #视觉
+    tabular = f'./blob/inst_tabular.txt' #表格
 
-
+#利用LLM模型进行总结
 class Summarizer(ABC):
     def __init__(self):
         pass
